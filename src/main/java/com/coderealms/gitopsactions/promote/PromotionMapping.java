@@ -4,6 +4,14 @@ import java.util.Map;
 
 public class PromotionMapping {
 
-    Map<String,PromotionTarget> promotionMapping;
+    private Map<String,PromotionTarget> promotionMapping;
 
+    public Map<String, PromotionTarget> getPromotionMapping() {
+        return promotionMapping;
+    }
+
+    public PromotionMapping setPromotionMapping(Map<String, PromotionTarget> promotionMapping) {
+        this.promotionMapping = promotionMapping;
+        return this;
+    }
 }
