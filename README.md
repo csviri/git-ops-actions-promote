@@ -1,4 +1,7 @@
 # git-ops-actions-promote
 
-Docs coming soon. For now see general docs:
-https://github.com/csviri/git-ops-actions
+This is an GitHub Action to promote environments in an OpsRepository
+
+For main docs see: https://github.com/csviri/git-ops-actions
+
+More docs coming soon...
