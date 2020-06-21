@@ -30,6 +30,7 @@ public class PromoteApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws IOException {
+        System.out.println(System.getenv());
         PromoteParams promoteParams = fillPromoteParams(args);
         File mappingFile = new File(GITOPS_ACTIONS_YAML_FILENAME);
         PromotionMapping promotionMapping =
