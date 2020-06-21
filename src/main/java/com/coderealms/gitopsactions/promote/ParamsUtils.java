@@ -20,9 +20,8 @@ public class ParamsUtils {
                     throw new IllegalArgumentException("Unknows param key:" + key);
             }
         }
-        System.out.println("GITHUB REF: "+System.getProperty("GITHUB_REF"));
-        promoteParams.setActualBranch(System.getProperty("GITHUB_REF").replace("refs/heads/", ""));
-        promoteParams.setActualRepo(System.getProperty("GITHUB_REPOSITORY"));
+        promoteParams.setActualBranch(System.getenv("GITHUB_REF").replace("refs/heads/", ""));
+        promoteParams.setActualRepo(System.getenv("GITHUB_REPOSITORY"));
         return promoteParams;
     }
 
