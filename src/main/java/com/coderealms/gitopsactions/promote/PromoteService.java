@@ -18,6 +18,10 @@ public class PromoteService {
         try {
             GitHubService gitHubService = new GitHubService(promoteParams.getToken(), promoteParams.getActualRepo());
             PromotionTarget promotionTarget = promotionMapping.getPromotionMapping().get(promoteParams.getActualBranch());
+            if (promotionTarget == null) {
+                log.info("No promotion target. Will exit.");
+                return;
+            }
             for (String targetEnvironment : promotionTarget.getTargetEnvironments()) {
                 String promoteText = "Promote environment from:" + promoteParams.getActualBranch()
                         + " to environment: " + targetEnvironment;
