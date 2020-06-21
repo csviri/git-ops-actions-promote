@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.io.File;
 import java.util.Arrays;
 
 import static com.coderealms.gitopsactions.promote.ParamsUtils.toPropagationParams;
@@ -28,6 +29,8 @@ public class PromoteApplication implements CommandLineRunner {
     public void run(String... args) {
         System.out.println(Arrays.toString(args));
         System.out.println(System.getenv().toString());
+        File f = new File(".");
+        System.out.println(Arrays.toString(f.list()));
         PromoteParams promoteParams = toPropagationParams(args);
         promoteService.propagateVersion(promoteParams);
     }
