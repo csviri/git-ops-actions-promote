@@ -1,0 +1,7 @@
+promotionMapping:
+  dev:
+    autoApprove: true
+    targetEnvironments: ["pre-prod"]
+  pre-prod:
+    autoApprove: false
+    targetEnvironments: ["prod"]

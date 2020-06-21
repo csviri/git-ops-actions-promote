@@ -1,0 +1,15 @@
+name: 'GitOpsActions - Promote'
+description: 'Promotes deployment to the next environment'
+inputs:
+  token:
+    description: 'Token to access ops repo'
+    required: true
+outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - token=${{ inputs.token }}
+branding:
+  icon: 'chevrons-up'
+  color: 'blue'
